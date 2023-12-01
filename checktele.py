@@ -45,14 +45,14 @@ def gen_user(choice):
         c = random.choices(a)
         d = random.choices(b)
         s = random.choices(e)
-        f = [c[0], "_", d[0], "_", s[0]]
+        f = [c[0], s[0], s[0], s[0], d[0]]
         username = ''.join(f)
         if username in banned[0]:
             c = random.choices(a)
             d = random.choices(b)
             s = random.choices(e)
-            f = [c[0], "_", d[0], "_", s[0]]
-            username = ''.join(f)
+            f = [c[0], s[0], s[0], s[0], d[0]]
+            username =''.join(f)
         else:
             pass
     if choice == "2":
@@ -283,7 +283,7 @@ async def _(event):
             except Exception as eee:
                 await sython.send_message(event.chat_id, f'''Error : @{username}''')
 Threads=[] 
-for t in range(100):
+for t in range(200):
     x = threading.Thread(target=_)
     le = threading.Thread(target=gen_user)
     x.start()
